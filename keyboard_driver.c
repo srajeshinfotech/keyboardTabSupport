@@ -992,3 +992,23 @@ unsigned short GetCmdLine(char *CmdLine, unsigned short Index, int isPassword)
 	return 0;
 }
 
+int main()
+{
+    char username[MAX_CMD_SIZE] = {0}, password[MAX_CMD_SIZE] = {0};
+
+    // open a new console for the user
+    OpenConsole(0);
+
+    printf("\nUsername : ");  
+    GetCmdLine(username, 0, 0);
+
+    printf("\nPassword : ");     
+        GetCmdLine(password, 0, 1);  
+
+    printf("\nOUTPUT :- \nUSERNAME = %s\nPASSWORD = %s\n", username, password);
+    // close the current console and restores back the default console
+    CloseConsole();
+
+    return 0;
+}
+
